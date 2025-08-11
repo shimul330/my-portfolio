@@ -15,8 +15,8 @@ const Contact = () => {
         setStatus("Sending...");
 
         try {
-            const res = await axios.post("http://localhost:5000/contact", formData);
-            console.log(res)
+            const res = await axios.post("https://contact-server-side.vercel.app/contact", formData);
+           
             if (res.data.success) {
                 setStatus("Message sent successfully!");
                 setFormData({ name: "", email: "", message: "" });
