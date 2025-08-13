@@ -47,7 +47,7 @@ const About = () => {
                 </div>
 
                 {/* Right: Text Section */}
-                <div data-aos="fade-left" className="w-full md:w-1/2">
+                <div data-aos="fade-right" className="w-full md:w-1/2">
                     <h2 className="text-4xl font-bold mb-6 border-b-4 border-blue-500 inline-block">
                         About Me
                     </h2>
