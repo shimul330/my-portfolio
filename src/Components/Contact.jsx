@@ -46,7 +46,7 @@ const Contact = () => {
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
 
                 {/* Left Side */}
-                <div>
+                <div  data-aos="zoom-out-right">
                     <h2 className="text-3xl font-bold mb-2">Let's talk about your project</h2>
                     <p className="text-gray-300 mb-6">
                         I'm currently available for new projects. Contact me to discuss your web development needs.
@@ -75,7 +75,7 @@ const Contact = () => {
                 </div>
 
                 {/* Right Side */}
-                <div className="bg-[#111827] p-6 rounded-lg">
+                <div data-aos="zoom-out-down" className="bg-[#111827] p-6 rounded-lg">
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
                             <label className="block mb-1">Full name</label>

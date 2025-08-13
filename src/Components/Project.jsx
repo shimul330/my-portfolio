@@ -97,9 +97,11 @@ const Project = () => {
     };
     return (
         <div id='project' className="max-w-7xl mx-auto p-6 space-y-10">
-            {data.map((project) => (
+            {data.map((project, index) => (
                 <div
                     key={project.id}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 150}
                     className="flex border border-gray-300 rounded-lg overflow-hidden "
                 >
                     {/* Left side image slider */}

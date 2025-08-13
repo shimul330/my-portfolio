@@ -24,7 +24,7 @@ const Education = () => {
       <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Education</h2>
       <div className="space-y-8 relative border-l-4 border-purple-600">
         {educationData.map((edu, index) => (
-          <div key={index} className="relative bg-[#1e1e1e] rounded-xl shadow-lg p-6 ml-10">
+          <div  data-aos="zoom-in-right" key={index} className="relative bg-[#1e1e1e] rounded-xl shadow-lg p-6 ml-10">
             {/* Timeline Dot */}
             <span className="absolute -left-2 top-5 w-3 h-3 bg-pink-500 rounded-full border-2 border-white"></span>
 

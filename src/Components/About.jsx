@@ -21,7 +21,8 @@ const About = () => {
 
 
 
-                <div className="flex-1 w-full md:w-1/2 relative flex justify-center items-center">
+                    {/* left side */}
+                <div data-aos="fade-right" className="flex-1 w-full md:w-1/2 relative flex justify-center items-center">
 
                     {/* Rotating Wheel Background (Centered on Image) */}
                     <img
@@ -46,7 +47,7 @@ const About = () => {
                 </div>
 
                 {/* Right: Text Section */}
-                <div className="w-full md:w-1/2">
+                <div data-aos="fade-left" className="w-full md:w-1/2">
                     <h2 className="text-4xl font-bold mb-6 border-b-4 border-blue-500 inline-block">
                         About Me
                     </h2>
