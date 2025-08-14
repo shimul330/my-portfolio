@@ -68,10 +68,10 @@ const Navbar = () => {
                     ))}
                     <a
                         href="/resume.pdf"
-                        download
+                        download="Shimul_CV.pdf"
                         className="block bg-blue-600 hover:bg-blue-700 text-center py-2 rounded-md"
                     >
-                        Resume
+                        Download Resume
                     </a>
                 </div>
             )}
