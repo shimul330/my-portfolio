@@ -88,7 +88,7 @@ const Skills = () => {
               key={index}
               data-aos="fade-up"
               data-aos-delay={index * 150}
-              className="backdrop-blur-md bg-white/10 border border-blue-500 rounded-xl shadow-lg p-6"
+              className="backdrop-blur-md shadow-lg  shadow-blue-600 bg-white/10 border border-blue-500 rounded-xl p-6"
             >
               <h3 className={`text-2xl font-semibold mb-4 ${category.color}`}>
                 {category.title}

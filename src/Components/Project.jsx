@@ -31,7 +31,7 @@ const Project = () => {
                 "Daisy UI",
             ],
             liveLink: "https://job-career.netlify.app/",
-            githubFrontend: "https://github.com/username/frontend-repo",
+            githubFrontend: "https://github.com/shimul330/job-hook-client-side",
             githubBackend: "https://github.com/username/backend-repo",
         },
         {
@@ -55,7 +55,7 @@ const Project = () => {
                 "Daisy UI"
             ],
             liveLink: "https://car-rental-house.netlify.app/",
-            githubFrontend: "https://github.com/username/frontend-repo",
+            githubFrontend: "https://github.com/shimul330/car-rental-client-side-project",
             githubBackend: "https://github.com/username/backend-repo",
         },
         {
@@ -80,7 +80,7 @@ const Project = () => {
                 "Stripe"
             ],
             liveLink: "https://vaxin-shop.netlify.app/",
-            githubFrontend: "https://github.com/username/frontend-repo",
+            githubFrontend: "https://github.com/shimul330/vaxin-shop-client-side",
             githubBackend: "https://github.com/username/backend-repo",
         },
     ];
@@ -102,7 +102,7 @@ const Project = () => {
                     key={project.id}
                     data-aos="fade-up"
                     data-aos-delay={index * 150}
-                    className="flex border border-gray-300 rounded-lg overflow-hidden "
+                    className="flex shadow-xl shadow-blue-600 rounded-lg overflow-hidden "
                 >
                     {/* Left side image slider */}
                     <div className="flex-1 max-w-[700px]">

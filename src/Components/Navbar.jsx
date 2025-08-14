@@ -34,10 +34,10 @@ const Navbar = () => {
                 <div className="hidden md:block">
                     <a
                         href="/resume.pdf"
-                        download
+                         download="Shimul_CV.pdf"
                         className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md font-medium"
                     >
-                        Resume
+                        Download CV
                     </a>
                 </div>
 
@@ -71,7 +71,7 @@ const Navbar = () => {
                         download="Shimul_CV.pdf"
                         className="block bg-blue-600 hover:bg-blue-700 text-center py-2 rounded-md"
                     >
-                        Download Resume
+                        Download CV
                     </a>
                 </div>
             )}
