@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FaExternalLinkAlt, FaGithub, FaInfoCircle } from "react-icons/fa";
 
-
 const Project = () => {
     const data = [
         {
@@ -95,19 +94,20 @@ const Project = () => {
     const closeModal = () => {
         setSelectedProject(null);
     };
+
     return (
-        <div id='project' className="max-w-7xl mx-auto p-6 space-y-10">
+        <div id='project' className="max-w-7xl mx-auto p-4 sm:p-6 space-y-10">
             {data.map((project, index) => (
                 <div
                     key={project.id}
                     data-aos="fade-up"
                     data-aos-delay={index * 150}
-                    className="flex shadow-xl shadow-blue-600 rounded-lg overflow-hidden "
+                    className="flex flex-col md:flex-row shadow-xl shadow-blue-600 rounded-lg overflow-hidden"
                 >
                     {/* Left side image slider */}
-                    <div className="flex-1 max-w-[700px]">
+                    <div className="flex-1 w-full md:max-w-[700px] h-64 sm:h-80 md:h-auto">
                         <Swiper
-                            modules={[Pagination, Autoplay,]}
+                            modules={[Pagination, Autoplay]}
                             autoplay={{
                                 delay: 3000,
                                 disableOnInteraction: false,
@@ -121,7 +121,7 @@ const Project = () => {
                                     <img
                                         src={img}
                                         alt={`${project.title} Slide ${idx + 1}`}
-                                        className=" w-full h-full "
+                                        className="w-full h-full object-cover"
                                     />
                                 </SwiperSlide>
                             ))}
@@ -129,66 +129,63 @@ const Project = () => {
                     </div>
 
                     {/* Right side text */}
-                    <div className="flex-1 text-white p-8 flex flex-col">
-                        <h2 className="text-3xl font-semibold text-purple-600 mb-4">{project.title}</h2>
-                        <p className="text-[15px] leading-relaxed mb-4">{project.description}</p>
+                    <div className="flex-1 text-white p-4 sm:p-6 flex flex-col justify-between min-w-0">
+                        <div>
+                            <h2 className="text-2xl sm:text-3xl font-semibold text-purple-600 mb-3">
+                                {project.title}
+                            </h2>
+                            <p className="text-sm sm:text-[15px] leading-relaxed mb-4 break-words">
+                                {project.description}
+                            </p>
 
-                        {/* Technologies */}
-                        <div className="flex flex-wrap gap-2 mt-4 mb-6">
-                            {project.technologies.map((tech, index) => (
-                                <span
-                                    key={index}
-                                    className="bg-purple-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-600 hover:bg-gray-700 transition"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
+                            {/* Technologies */}
+                            <div className="flex flex-wrap gap-2 mt-4 mb-6 justify-start">
+                                {project.technologies.map((tech, index) => (
+                                    <span
+                                        key={index}
+                                        className="bg-purple-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-gray-600 hover:bg-gray-700 transition max-w-full break-words"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
 
                         {/* Buttons */}
-                        <div className="flex gap-4 mt-7">
-                            {/* Live Link */}
+                        <div className="flex flex-col sm:flex-row gap-3 mt-4">
                             <a
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-white transition"
+                                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-white justify-center transition"
                             >
                                 <FaExternalLinkAlt /> Live
                             </a>
 
-                            {/* GitHub */}
-                            <a
-                                href={project.githubLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
                                 onClick={() => {
-                                    window.open(project.githubFrontend, "_blank");  
-                                    window.open(project.githubBackend, "_blank");  
+                                    window.open(project.githubFrontend, "_blank");
+                                    window.open(project.githubBackend, "_blank");
                                 }}
-                                className="flex items-center gap-2 bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-md text-white transition"
+                                className="flex items-center gap-2 bg-gray-700 hover:bg-gray-800 px-4 py-2 rounded-md text-white justify-center transition"
                             >
                                 <FaGithub /> GitHub
-                            </a>
+                            </button>
 
-                            {/* Details */}
                             <button
                                 onClick={() => handleDetails(project.id)}
-                                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md text-white transition"
+                                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md text-white justify-center transition"
                             >
                                 <FaInfoCircle /> Details
                             </button>
                         </div>
                     </div>
-
                 </div>
-
-
             ))}
 
             {/* Popup Modal */}
             {selectedProject && (
-                <div className="fixed inset-0   flex justify-center items-center z-50">
+                <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 p-4">
                     <div className="bg-gray-900 rounded-lg max-w-lg w-full p-6 relative shadow-lg animate-fadeInUp">
                         {/* Close Button */}
                         <button
@@ -199,15 +196,18 @@ const Project = () => {
                         </button>
 
                         {/* Content */}
-                        <h2 className="text-3xl  font-bold text-white mb-3">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
                             {selectedProject.title}
                         </h2>
-                        <p className="text-gray-300  mb-4">{selectedProject.description}</p>
-                        <div className="flex flex-wrap gap-2 mt-5 mb-6">
+                        <p className="text-gray-300 mb-4 text-sm sm:text-[15px] break-words">
+                            {selectedProject.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mt-5 mb-6 justify-start">
                             {selectedProject.technologies.map((tech, index) => (
                                 <span
                                     key={index}
-                                    className="bg-blue-700 text-white hover:bg-blue-600 px-3 py-1 rounded-full text-sm"
+                                    className="bg-blue-700 text-white hover:bg-blue-600 px-3 py-1 rounded-full text-xs sm:text-sm max-w-full break-words"
                                 >
                                     {tech}
                                 </span>
@@ -215,20 +215,20 @@ const Project = () => {
                         </div>
 
                         {/* Buttons */}
-                        <div className="flex justify-between gap-3 mt-10">
+                        <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6">
                             <a
                                 href={selectedProject.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex text-white items-center gap-2 bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-md transition"
+                                className="flex text-white items-center gap-2 bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-md justify-center transition"
                             >
                                 <FaExternalLinkAlt /> Live
                             </a>
                             <a
-                                href={selectedProject.githubLink}
+                                href={selectedProject.githubFrontend}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex text-white items-center gap-2 bg-purple-600 hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                                className="flex text-white items-center gap-2 bg-purple-600 hover:bg-gray-700 px-3 py-2 rounded-md justify-center transition"
                             >
                                 <FaGithub /> GitHub
                             </a>
